@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{ 
+            margin: 0;
+            padding: 0;
+        }
+        img {
+            width: 100%;
+        }
+        body{
+            background-image: url(bg_main.gif);
+            background-repeat: inherit;
+            background-position: center;
+         }
+        .main {
+            width: 960px;
+            margin: 0 auto;
+        }
+        .header-top {
+            background-color: #683091;
+            display: block;
+            overflow: hidden;
+            padding: 8px 0;
+        }
+        .header-top-left {
+            float: left;
+			width:400px;
+			display:block;
+			overflow:hidden;
+        }
+        .header-top-left p {
+            color: #fff;
+            font-size: 19px;
+            float: left;
+            margin: 0px 15px;
+        }
+        select {
+            width: 130px;
+            padding: 4px 8px;
+            border-radius: 5px;
+			margin-top:-10px
+        }
+        .header-top-left button {
+            background-color: green;
+            color: #fff;
+            border: 1px solid green;
+            padding: 5px 7px;
+            margin-right: 10px;
+            border-radius: 5px;
+        }
+        .header-top-right {
+            float: right;
+        }
+        .header-top-right input {
+            width: 150px;
+            padding: 4px 8px;
+            border-radius: 5px;
+        }
+        .search {
+            font-size: 12px;
+            padding: 5px;
+            background-color: green;
+            color: #fff;
+            border: 1px solid green;
+            padding: 5px 7px;
+            border-radius: 4px;
+
+        }
+        .lan{ 
+            font-size: 12px;
+            padding: 5px;
+            padding: 5px 7px;
+            border-radius: 4px;
+            margin-right: 15px;
+        }
+        .single-slider { 
+            background-image: url(basnner.jpg);
+            background-repeat:no-repeat;
+            height:220px;
+            width:100%;
+            background-size: cover;
+            box-shadow: 0px 0px 7px #666;
+        }
+        .logo {
+            padding-top: 35px;
+            padding-left: 35px;
+            padding-right: 15px;   
+            float: left;
+        }
+        .title {
+            PADDING-TOP: 74PX;
+            FONT-SIZE: 20px;
+            padding-left: 120px;
+        }
+        .title a{ 
+            color: #fff;
+            text-decoration: none;
+        }
+        .title p {
+            color: #fff;
+            width: 445px;
+            padding: 4px 10px;
+        }
+        .menu{
+            background-color: #fff;
+            
+         }
+        .main-menu {
+            border-bottom: 1px dashed #ddd;
+        }    
+        .main-menu ul{ 
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            
+            display: block;
+            overflow: hidden;
+        }
+        .main-menu ul a{ 
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 15px;
+            padding-right: 15px;
+            display: block;
+            float: left;
+            text-decoration: none;
+            border-right: 1px dashed #ddd;
+
+
+        }
+        .main-menu ul a:nth-child(1){ 
+            color: #f39c12;
+        }
+        .main-menu ul a:nth-child(2){ 
+            color:darkred;
+        }
+        .main-menu ul a:nth-child(3){ 
+            color: crimson;
+        }
+        .main-menu ul a:nth-child(4){ 
+            color: rgb(20, 220, 37);
+        }
+        .main-menu ul a:nth-child(5){ 
+            color: aqua;
+        }
+        .main-menu ul a:first-child{ 
+            border-left: 1px dashed #ddd;
+        }
+        
+        .main-menu ul a:hover{ 
+            background-color: #f39c12;
+        }
+        img.home {
+            width: 30px;
+            height: auto;
+            float: left;
+            margin-top: 5px;
+            margin-right: 15px;
+        }
+        .main-content { 
+            width: 720px;
+            margin-right: 10px;
+            float: left;
+        }
+        .content { 
+            display: block;
+            overflow: hidden;
+        }
+        .single-content{ 
+            background-image: url(welcome_grad.png);
+            background-repeat: repeat-x;
+            background-size: 100% 100%;
+            border: 1px solid #ededed;
+        }
+        .notice{ 
+            background-image: url(bg_notice_board.png);
+            background-repeat: no-repeat;
+        }
+        .content{ 
+            margin-top: 25px;
+        }
+        h2.notice-title {
+            padding-left: 123px;
+            padding-top: 20px;
+            font-weight: 100;
+        }
+        .all-notice {
+            padding-top: 15px;
+            margin-left: 159px;
+            padding-bottom: 20px;
+        }
+        .all-notice li a {
+            /* display: block; */
+            color: #666;
+            text-decoration: none;
+            font-size: 16px;
+            border-bottom: 1px dashed #66660F;
+            margin-right: 20px;
+            line-height: 23px;
+        }
+        a.all {
+            /* float: right; */
+            display: inherit;
+            text-align: right;
+            /* margin-top: 5px; */
+            margin-right: 20px;
+            margin-bottom: 10px;
+            text-decoration: none;
+            color: #000;
+
+        }
+        .single-news {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            background-color: #ededed;
+            padding: 10px;
+            color: #666;
+            border: 1px solid #ddd;
+        }
+        .all-news {
+            text-align: right;
+            float: right;
+            margin-top: 0px;
+            margin-right: 11px;
+            color: #000;
+            text-decoration: none;
+            background-color: rgb(124, 122, 122);
+            padding: 4px;
+        }
+        .content-area {
+            margin-top: 20px;
+        }
+        .content-header {
+             background-color: #609513;
+            color: #fff;
+            padding: 10px;
+        }
+        p.content-text {
+            font-size: 15px;
+            line-height: 21px;
+            font-weight: 100;
+            text-align: justify;
+            color: #666;
+        }
+        .card {
+            float: left;
+            width: 328px;
+            border: 1px solid #ddd;
+            background-color: #ededed;
+            box-shadow: 0px 0px 3px #666;
+            /* margin-right: 10px; */
+            margin-bottom: 20px;
+            padding: 10px;
+        }
+        .card-header h2 {
+            font-weight: normal;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+        .card-img {
+            width: 116px;
+            height: 88px;
+            float: left;
+            margin-right: 30px;
+        }
+        .card-img img {
+            max-height: 85px;
+        }
+        .card-content ul li a {
+            text-decoration: none;
+            color: #666;
+            font-size: 15px;
+            line-height: 21px;
+        }
+        .card-content ul li a:hover {
+            text-decoration: underline;
+            color: #000;
+        }
+        .m-r{ 
+            margin-right: 10px;
+            margin-bottom: 20px;
+        }
+        .m-l{ 
+            margin-left: 10px;
+            margin-bottom: 20px;
+        }
+        .sidebar {
+            float: left;
+            width: 220px;
+            margin-left: 10px;
+        }
+        .single-sidebar {
+            margin-bottom: 15px;
+        }
+        .sidebar-header h2 {
+            background: #609513;
+            font-weight: 100;
+            color: #fff;
+            font-size: 18px;
+            padding: 5px 10px;
+            margin-bottom: 10px;
+        }
+        .sidebar-img {
+            width: 120px;
+            margin: auto;
+            margin-bottom: 10px;
+        }
+		.details ul li {
+			margin: 5px 0;
+			padding: 5px 0;
+			border-bottom: 1px solid #666;
+		}
+        .details p {
+            color: #666;
+            font-size: 16px;
+            line-height: 20px;
+            font-style: italic;
+            margin-bottom: 6px;
+        }
+        .details a {
+            font-size: 14px;
+            /* padding-top: 10px; */
+        }
+        .details ul {
+			/* text-decoration: none; */
+			margin-left: 0;
+			padding: 0;
+			list-style: none;
+		}
+        .details ul li a {
+			text-decoration: none;
+			color: #666;
+			font-size: 16px;
+			display: block;
+			background-image: url(list-icon.PNG);
+			background-repeat: no-repeat;
+			background-position: initial;
+			background-size: 15px 15px;
+			padding-left: 18px;
+		}
+        .details ul li a:hover {
+            text-decoration: underline;
+            color: #000;
+        }
+        a.link {
+            text-align: center;
+            display: block;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            background-image: linear-gradient(#666, #ddd);
+            color: #000;
+            padding: 2px 0;
+        }
+        .footer-top {
+            background-image: url(footer_top_bg.png);
+            background-repeat: no-repeat;
+            height: 84px;
+            background-size: cover;
+        }
+        .footer {
+            width: 1020px;
+            margin: 20px auto 0;s
+
+        }
+        .footer-left a {
+            text-decoration: none;
+            color: #000;
+            font-size: 19px;
+            padding: 7px 20px;
+            border-right: 1px dashed #ddd;
+            border-left: 1px dashed #ddd;
+        }
+        .footer-left a:hover {
+            color: #fff;
+            background-color: #000;
+        }
+        .footer-bottom {
+            background-color: #ededed;
+            padding: 20px;
+            overflow: hidden;
+        }
+        .footer-left {
+            float: left;
+            width: 520px;
+        }
+        .footer-left p {
+            font-size: 15px;
+            margin-top: 20px;
+            font-weight: 600;
+        }
+        .footer-right {
+            float: right;
+            width: 450px;
+        }
+        .footer-right small {
+            float: right;
+        }
+        .footer-right img {
+            width: 30px;
+            float: right;
+        }
+        .footer-right p {
+            text-align: right;
+        }
+        .footer-right p {
+            text-align: right;
+            margin-top: 15px;
+            font-size: 12px;
+            padding-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="header">
+            <div class="header-top">
+                <div class="header-top-left">
+                        <p>Bangladesh National</p>
+                        <select name="" id="">
+                            <option value="">District</option>
+                            <option value="">Divition</option>
+                            <option value="">Thana</option>
+                            <option value="">Cabinate</option>
+                        </select>
+                        <button>Go</button>
+                    </div>
+                    <div class="header-top-right">
+                        <input type="search">
+                        <button class="search">Search</button>
+                        <button class="lan">Bangla</button>
+                    </div>
+            </div>
+            <div class="slider">
+                <div class="single-slider">
+                    <div class="logo">
+                        <img  src="logo.png" >
+                    </div>
+                    <div class="title">
+                        <h2><a href="#">Bangladesh Agricultural Research Institute (BARI)</a> </h2>
+                        <p>Government of the People's Republic of Bangladesh</p>
+                    </div>
+                </div>
+            </div>
+            <div class="menu">
+                <div class="main-menu">
+                    <img class="home" src="home.svg" alt="">
+                    <ul>
+                        <li>
+                            <a href="">About Us</a>
+                            <a href="">Wings</a>
+                            <a href="">Research</a>
+                            <a href="">Achievement & Award</a>
+                            <a href="">Contact Us</a>
+                            <a href=""> Web Mail</a>
+                            <a href="">Gallery</a>
+                            <a href="">Sitemap</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div> 
+        <div class="content">
+            <div class="main-content">
+                <div class="single-content">
+                    <div class="notice">
+                        <h2 class="notice-title">Notice Board</h2>
+                        <div class="all-notice">
+                            <ul>
+                                <li><a href="">Send the relevant proofs of the Ministry of Agriculture in the Annual ...</a></li>
+                                <li><a href="">Vacancy Announcement_25/07/2019</a></li>
+                                <li><a href="">Nomination for award of "Mother of Humanity Social Welfare Medal (2018...</a></li>
+                                <li><a href="">Participate in discussion meetings organized on the occasion of "Natio...</a></li>
+                                <li><a href="">Called "National Public Service Day" to be properly celebrated_২২/০৭/২...</a></li>
+                            </ul>
+                        </div>
+                        <a class="all" href="">All</a>
+                    </div>
+                </div>
+                <div class="single-news">
+                    <div class="news">
+                        <strong>News: </strong><span>Called "National Public Service Day" to be properly celebrated_২২/০৭/২...</span>
+                        <a class="all-news" href="">All</a>
+                    </div>
+                </div>
+                <div class="content-area">
+                    <div class="content-header">
+                        <p>Bangladesh Agricultural Research Institute</p>
+                    </div>
+                    <div class="content-text-area">
+                        <p class="content-text">Bangladesh Agricultural Research Institute (BARI) is the largest multi- crop research institute conducting research on a wide variety of crops, such as cereals, tubers, pulses, oilseeds, vegetables, fruits, spices, flowers, etc. Besides variety development, this institute carries out research on such areas as soil and crop management, disease and insect management, water management and irrigation, development of farm machinery, improvement of cropping and farming system management, post-harvest handling and processing, and socio-economic studies related to production, processing, marketing and consumption. The institute functions with the director general as the chief executive along with three directors of three of its major wings, such as Research Wing, Support Service Wing, and Training and Communication Wing. The Research Wing executes and monitors all the research programmes and other research activities through 7 special crop research centres, 17 research divisions, 7 regional research stations and 28 sub-stations. Support Service Wing provides all the logistic supports in research and personnel management. This wing is also responsible for infrastructural development and general procurement of the institute. The Training and Communication Wing is responsible for human resource development through conducting trainings and arranging scholarships for higher studies. Dissemination of information through print and electronic media, organizing seminars and symposia are also the important areas of activities of this wing.</p>
+                    </div>
+                    <div class="card m-r">
+                        <div class="card-header">
+                            <h2>Agricultural Technology</h2>
+                        </div>
+                        <div class="card-img">
+                            <img src="brinjal.1.jpg" alt="">
+                        </div>
+                        <div class="card-content">
+                            <ul>
+                                <li><a href="">Agricultural Technology</a></li>
+                                <li><a href="">BFacts BookARI Technology</a></li>
+                                <li><a href=""> Agro Technology Hand </a></li>
+                                <li><a href="">Krishi Projukti Bhandar</a></li>
+                            </ul>
+                        </div>    
+                    </div>
+                    <div class="card m-l">
+                        <div class="card-header">
+                            <h2>Reports & Publications</h2>
+                        </div>
+                        <div class="card-img">
+                            <img src="seba_14.jpg" alt="">
+                        </div>
+                        <div class="card-content">
+                            <ul>
+                                <li><a href="">Agricultural Technology</a></li>
+                                <li><a href="">BFacts BookARI Technology</a></li>
+                                <li><a href=""> Agro Technology Hand </a></li>
+                                <li><a href="">Krishi Projukti Bhandar</a></li>
+                            </ul>
+                        </div>    
+                    </div>
+                    <div class="card m-r">
+                            <div class="card-header">
+                                <h2>Notification & Circulars</h2>
+                            </div>
+                            <div class="card-img">
+                                <img src="images.jpg" alt="">
+                            </div>
+                            <div class="card-content">
+                                <ul>
+                                    <li><a href="">Agricultural Technology</a></li>
+                                    <li><a href="">BFacts BookARI Technology</a></li>
+                                    <li><a href=""> Agro Technology Hand </a></li>
+                                    <li><a href="">Krishi Projukti Bhandar</a></li>
+                                </ul>
+                            </div>    
+                    </div>
+                    <div class="card m-l">
+                        <div class="card-header">
+                            <h2>Developed Variety/Technology</h2>
+                        </div>
+                        <div class="card-img">
+                            <img src="Gom-28.jpg" alt="">
+                        </div>
+                        <div class="card-content">
+                            <ul>
+                                <li><a href="">Agricultural Technology</a></li>
+                                <li><a href="">BFacts BookARI Technology</a></li>
+                                <li><a href=""> Agro Technology Hand </a></li>
+                                <li><a href="">Krishi Projukti Bhandar</a></li>
+                            </ul>
+                        </div>    
+                    </div>
+                    <div class="card m-r">
+                        <div class="card-header">
+                            <h2>E-Agriculture</h2>
+                        </div>
+                        <div class="card-img">
+                            <img src="Logo_E-AGRI.png" alt="">
+                        </div>
+                        <div class="card-content">
+                            <ul>
+                                <li><a href="">Agricultural Technology</a></li>
+                                <li><a href="">BFacts BookARI Technology</a></li>
+                                <li><a href=""> Agro Technology Hand </a></li>
+                                <li><a href="">Krishi Projukti Bhandar</a></li>
+                            </ul>
+                        </div>    
+                    </div>
+                    <div class="card m-l">
+                        <div class="card-header">
+                            <h2>Online Agro Service</h2>
+                        </div>
+                        <div class="card-img">
+                            <img src="service-2.jpg" alt="">
+                        </div>
+                        <div class="card-content">
+                            <ul>
+                                <li><a href="">Agricultural Technology</a></li>
+                                <li><a href="">BFacts BookARI Technology</a></li>
+                                <li><a href=""> Agro Technology Hand </a></li>
+                                <li><a href="">Krishi Projukti Bhandar</a></li>
+                            </ul>
+                        </div>    
+                    </div>
+                    <div class="card m-r">
+                        <div class="card-header">
+                            <h2>governance Improvement</h2>
+                        </div>
+                        <div class="card-img">
+                            <img src="Moldova.jpg" alt="">
+                        </div>
+                        <div class="card-content">
+                            <ul>
+                                <li><a href="">Agricultural Technology</a></li>
+                                <li><a href="">BFacts BookARI Technology</a></li>
+                                <li><a href=""> Agro Technology Hand </a></li>
+                                <li><a href="">Krishi Projukti Bhandar</a></li>
+                            </ul>
+                        </div>    
+                    </div>
+                <div class="card m-l">
+                    <div class="card-header">
+                        <h2>Human Resource Development</h2>
+                    </div>
+                    <div class="card-img">
+                        <img src="download.jpg" alt="">
+                    </div>
+                    <div class="card-content">
+                        <ul>
+                            <li><a href="">Agricultural Technology</a></li>
+                            <li><a href="">BFacts BookARI Technology</a></li>
+                            <li><a href=""> Agro Technology Hand </a></li>
+                            <li><a href="">Krishi Projukti Bhandar</a></li>
+                        </ul>
+                    </div>    
+                </div>
+                <div class="card m-r">
+                    <div class="card-header">
+                        <h2>Law & Regulations</h2>
+                    </div>
+                    <div class="card-img">
+                        <img src="index_laws_1.jpg" alt="">
+                    </div>
+                    <div class="card-content">
+                        <ul>
+                            <li><a href="">Agricultural Technology</a></li>
+                            <li><a href="">BFacts BookARI Technology</a></li>
+                            <li><a href=""> Agro Technology Hand </a></li>
+                            <li><a href="">Krishi Projukti Bhandar</a></li>
+                        </ul>
+                    </div>    
+                </div>
+                <div class="card m-l">
+                    <div class="card-header">
+                        <h2>Miscellaneous</h2>
+                    </div>
+                    <div class="card-img">
+                        <img src="others1.jpg" alt="">
+                    </div>
+                    <div class="card-content">
+                        <ul>
+                            <li><a href="">Agricultural Technology</a></li>
+                            <li><a href="">BFacts BookARI Technology</a></li>
+                            <li><a href=""> Agro Technology Hand </a></li>
+                            <li><a href="">Krishi Projukti Bhandar</a></li>
+                        </ul>
+                    </div>    
+                </div>
+                <div class="card m-r">
+                    <div class="card-header">
+                        <h2>Labour Management</h2>
+                    </div>
+                    <div class="card-img">
+                        <img src="jpg.jpeg" alt="">
+                    </div>
+                    <div class="card-content">
+                        <ul>
+                            <li><a href="">Agricultural Technology</a></li>
+                            <li><a href="">BFacts BookARI Technology</a></li>
+                            <li><a href=""> Agro Technology Hand </a></li>
+                            <li><a href="">Krishi Projukti Bhandar</a></li>
+                        </ul>
+                    </div>    
+                </div>
+            </div>
+            </div>
+            <div class="sidebar">
+                <div class="single-sidebar">
+                    <div class="sidebar-header">
+                        <h2>Director General</h2>
+                    </div>
+                    <div class="sidebar-img">
+                        <img src="EC_BARC_New.jpg" alt="">
+                    </div>
+                    <div class="details">
+                        <P>Dr. Abul Kalam Azad, Director <br>General, Bangladesh <br>Agricultur...</P>
+
+                        <a href="#">Details</a>	
+                    </div>
+                </div>
+                <div class="single-sidebar">
+                    <div class="sidebar-header">
+                        <h2>Internal E-Services </h2>
+                    </div>
+                    <div class="details">
+                        <ul>
+                            <li><a href="">Online APA Reporting</a></li>
+                            <li><a href="">Personnel Data Sheet (PDS)</a></li>
+                            <li><a href="">Labour Management</a></li>
+                            <li><a href="">CL Management</a></li>
+                            <li><a href="">Old Pay Roll (BARI LAN User)</a></li>
+                            <li><a href="">Pay Roll</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="single-sidebar">
+                    <div class="sidebar-header">
+                        <h2>Central E-Services  </h2>
+                    </div>
+                    <div class="details">
+                        <ul>
+                            <li><a href="">Online APA Reporting</a></li>
+                            <li><a href="">Personnel Data Sheet (PDS)</a></li>
+                            <li><a href="">Labour Management</a></li>
+                            <li><a href="">CL Management</a></li>
+                            <li><a href="">Old Pay Roll (BARI LAN User)</a></li>
+                            <li><a href="">Pay Roll</a></li>
+                            <li><a href="">Online APA Reporting</a></li>
+                            <li><a href="">Personnel Data Sheet (PDS)</a></li>
+                            <li><a href="">Labour Management</a></li>
+                            <li><a href="">CL Management</a></li>
+                            <li><a href="">Old Pay Roll (BARI LAN User)</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="single-sidebar">
+                    <div class="sidebar-header">
+                        <h2>Important Links  </h2>
+                    </div>
+                    <div class="details">
+                        <ul>
+                            <li><a href="">Bangladesh Rice Research Institute</a></li>
+                            <li><a href="">Bangladesh Agricultural research council</a></li>
+                            <li><a href="">Department of Agricultural Extension</a></li>
+                            <li><a href="">Bangladesh Agricultural Development Corporation</a></li>
+                            <li><a href="">Ministry of Finance</a></li>
+                            <li><a href="">Ministry of Agriculture</a></li>
+                            <li><a href="">Bangladesh National Web Portal</a></li>
+                        </ul>
+                    </div>
+                    <a href="" class="link">All Link</a>
+                </div>
+                <div class="single-sidebar">
+                    <div class="sidebar-header">
+                        <h2>Emergency Hotline  </h2>
+                    </div>
+                    <img src="Hotline_EN.png" alt="">
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <div class="footer">
+        <div class="footer-top">
+
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-left">
+                <a href="#">Sitemap</a>
+                <p>Site was last updated: <span style="font-style:italic">2019-07-25 16:48:49</span></p>
+            </div>
+            <div class="footer-right">
+                <small>Planning and Implementation:  Cabinet Division,  a2i,  BCC,  DOICT,  BASIS. </small><br>
+                <img src="a2i.png" alt="">
+                <p>Technical Support: </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
